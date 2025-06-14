@@ -17,7 +17,7 @@ module.exports = function (server) {
         queue.push([socket.id, details]);
         io.emit("QueueLength", queue.length);
 
-        console.log(name)
+        console.log("queue",name)
 
         for (let i = 0; i < queue.length; i++) {
           for (let j = i + 1; j < queue.length; j++) {
@@ -92,6 +92,8 @@ module.exports = function (server) {
     socket.on("nameExchange", (player) => {
       const target = player.player1.split(",")[0] === socket.id ? player.player2.split(",")[0] : player.player1.split(",")[0];
       io.to(target).emit('nameExchange', player.name);
+
+      console.log("playing",player.name)
     });
 
     socket.on('disconnect', () => {
