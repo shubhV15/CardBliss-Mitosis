@@ -17,7 +17,7 @@ module.exports = function (server) {
         queue.push([socket.id, details]);
         io.emit("QueueLength", queue.length);
 
-        console.log("queue",name)
+        console.log("queue",details.name)
 
         for (let i = 0; i < queue.length; i++) {
           for (let j = i + 1; j < queue.length; j++) {
