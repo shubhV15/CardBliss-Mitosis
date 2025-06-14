@@ -17,6 +17,8 @@ module.exports = function (server) {
         queue.push([socket.id, details]);
         io.emit("QueueLength", queue.length);
 
+        console.log(name)
+
         for (let i = 0; i < queue.length; i++) {
           for (let j = i + 1; j < queue.length; j++) {
             if (queue[i][1].gridSelect === queue[j][1].gridSelect) {
