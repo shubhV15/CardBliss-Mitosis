@@ -25,8 +25,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-app.use('/access', authRoutes);
-app.use('/', authMiddleware, appRoutes);
+// app.use('/access', authRoutes);
+// app.use('/', authMiddleware, appRoutes);
 
 app.get('/ping', (req, res) => res.send('pong'));
 
