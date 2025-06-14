@@ -1376,6 +1376,7 @@
 
       const gridSelect = 6
       songSelect = document.querySelector('[name = "song-select"]').value
+      let name = document.querySelector('.name').value
 
       const x = gridSelect
 
@@ -1410,7 +1411,7 @@
       document.querySelector('.home').insertAdjacentHTML("beforeend", "<h1>Waiting for a player...</h1>");
       // document.querySelector('.home').insertAdjacentHTML("beforeend", `<h1>Or if u want to play with your friends u can invite them</h1>`);
       alert("To keep playing, you can either open a new tab and hit 'Play' to jump right back in, or share the game link with your friends to invite them, playing with friends makes it more fun! Or you can simply wait for a user to join the game.");
-      socket.emit("addQueue", { gridSelect, songSelect})
+      socket.emit("addQueue", { gridSelect, songSelect, name})
 
     })
 
